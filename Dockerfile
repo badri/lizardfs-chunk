@@ -15,4 +15,15 @@ RUN apt-get -y update
 
 RUN apt-get -y install lizardfs-chunkserver
 
+RUN cp /etc/mfs/mfschunkserver.cfg.dist /etc/mfs/mfschunkserver.cfg
+
+RUN cp /etc/mfs/mfshdd.cfg.dist /etc/mfs/mfshdd.cfg
+
+RUN mkdir /mnt/chunk1
+RUN mkdir /mnt/chunk2
+
+RUN chown -R mfs:mfs /mnt/chunk1
+RUN chown -R mfs:mfs /mnt/chunk2
+
+RUN sed -i 's/LIZARDFSCHUNKSERVER_ENABLE=false/LIZARDFSCHUNKSERVER_ENABLE=true/g'  /etc/default/lizardfs-chunkserver
 
