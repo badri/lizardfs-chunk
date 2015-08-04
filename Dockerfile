@@ -22,6 +22,9 @@ RUN cp /etc/mfs/mfshdd.cfg.dist /etc/mfs/mfshdd.cfg
 RUN mkdir /mnt/chunk1
 RUN mkdir /mnt/chunk2
 
+RUN echo "/mnt/chunk1" >> /etc/mfs/mfshdd.cfg
+RUN echo "/mnt/chunk2" >> /etc/mfs/mfshdd.cfg
+
 RUN chown -R mfs:mfs /mnt/chunk1
 RUN chown -R mfs:mfs /mnt/chunk2
 
