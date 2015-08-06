@@ -29,4 +29,9 @@ RUN sed -i 's/LIZARDFSCHUNKSERVER_ENABLE=false/LIZARDFSCHUNKSERVER_ENABLE=true/g
 
 EXPOSE 9422
 
+RUN chmod 0755 /var/lib/mfs
+
+RUN chown -R mfs:mfs /var/lib/mfs
+
 ENTRYPOINT  ["mfschunkserver", "-d", "start"]
+
