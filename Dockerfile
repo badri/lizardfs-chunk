@@ -24,7 +24,6 @@ RUN mkdir /mnt/chunk1
 RUN echo "/mnt/chunk1" >> /etc/mfs/mfshdd.cfg
 
 RUN chown -R mfs:mfs /mnt/chunk1
-RUN chown -R mfs:mfs /mnt/chunk2
 
 RUN sed -i 's/LIZARDFSCHUNKSERVER_ENABLE=false/LIZARDFSCHUNKSERVER_ENABLE=true/g'  /etc/default/lizardfs-chunkserver
 
